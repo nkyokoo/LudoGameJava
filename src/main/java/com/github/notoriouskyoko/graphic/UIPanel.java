@@ -1,26 +1,24 @@
 package com.github.notoriouskyoko.graphic;
 
+import com.github.notoriouskyoko.game.GameEngine;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class GamePanel extends JPanel {
-
+public class UIPanel extends JPanel {
 
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawRect (0, 0, 380, 380);
-        g.setColor(Color.RED);
-
+        g.drawString("Current turn: " + GameEngine.getInstance().getTurn(), 25, 54);
 
     }
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(400, 400);
+        return new Dimension(800, 600);
     }
-
 
 
 }
