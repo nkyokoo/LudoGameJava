@@ -3,10 +3,31 @@ package com.github.notoriouskyoko.game.board;
 import com.github.notoriouskyoko.game.player.piece;
 import com.github.notoriouskyoko.game.player.player;
 import com.github.notoriouskyoko.ludo;
+import com.sun.javafx.geom.Vec2d;
 
-public class BoardController {
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Vector;
 
+import static javafx.scene.input.KeyCode.T;
 
+class BoardController {
+    public class field{
+        int Yposition;
+        int Xposition;
+        String id;
+        String type;
+        String color;
+
+         field(int _Yposition, int _Xposition, String _id, String _type, String _color){
+             Yposition = _Yposition;
+             Xposition = _Xposition;
+             id = _id;
+             type = _type;
+             color = _color;
+        }
+
+    }
 
     private String getPiece(int piece,int player){
         player pl = ludo.game.getPlayers().get(player);
@@ -18,45 +39,6 @@ public class BoardController {
     public void createBoard() {
 
 
-       String board =
-               "+-------------------+------------+-----------------------+\n" +
-               "|                   |            |                       |\n" +
-               "|                   |   +----+   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|      "+ getPiece(0,0) + getPiece(1,0) +"           |   |    |   |         "+ getPiece(0,1) + getPiece(1,1)+"            |\n" +
-               "|      "+ getPiece(2,0) + getPiece(3,0) +"           |   |    |   |         "+  getPiece(2,1) + getPiece(3,1) +"            |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "+--------------------   |    |   ------------------------+\n" +
-               "|                       |    |                           |\n" +
-               "|                       |    |                           |\n" +
-               "|   +--------------------    -----------------------+    |\n" +
-               "|   |                                               |    |\n" +
-               "|   |                                               |    |\n" +
-               "|   +--------------------    -----------------------+    |\n" +
-               "|                       |    |                           |\n" +
-               "+-------------------+   |    |   +-----------------------+\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|      " + getPiece(0,2) + getPiece(1,2) + "           |   |    |   |       "+ getPiece(0,3) + getPiece(1,3) +"              |\n" +
-               "|      "+ getPiece(2,2) + getPiece(3,2) +"           |   |    |   |       "+  getPiece(2,3) + getPiece(3,3) +"              |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   |    |   |                       |\n" +
-               "|                   |   +----+   |                       |\n" +
-               "|                   |            |                       |\n" +
-               "+-------------------+------------+-----------------------+\n";
-
-        char[] boardChar = board.toCharArray();
-
-        for (int i = 0; i < boardChar.length; i++) {
-            System.out.print(boardChar[i]);
-        }
 
 
     }

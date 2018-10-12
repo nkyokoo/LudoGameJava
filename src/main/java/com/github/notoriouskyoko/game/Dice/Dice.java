@@ -9,6 +9,7 @@ public class Dice {
     Random rnd = new Random();
     public int roll(){
         rolledNumber = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+        System.out.println(rolledNumber);
         return rolledNumber;
     }
 }

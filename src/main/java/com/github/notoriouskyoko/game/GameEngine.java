@@ -2,7 +2,6 @@ package com.github.notoriouskyoko.game;
 
 import com.github.notoriouskyoko.game.Dice.Dice;
 import com.github.notoriouskyoko.game.Dice.DiceStates;
-import com.github.notoriouskyoko.game.board.BoardController;
 import com.github.notoriouskyoko.game.player.PlayerTeam;
 import com.github.notoriouskyoko.game.player.piece;
 import com.github.notoriouskyoko.game.player.player;
@@ -13,6 +12,7 @@ import java.util.concurrent.Callable;
 
 public class GameEngine implements GEInterface{
 
+    int RolledNumber;
     ArrayList<player> players = new ArrayList<>();
     volatile boolean  isHuman = false;
     List<PlayerTeam> turns = Arrays.asList(PlayerTeam.values());
@@ -57,7 +57,6 @@ public class GameEngine implements GEInterface{
         Dice dice = new Dice();
         System.out.println("game started");
         DiceStates diceState = DiceStates.ROLL;
-        BoardController board = new BoardController();
 
 
 
@@ -80,7 +79,6 @@ public class GameEngine implements GEInterface{
                 break;
         }
 
-        System.out.println(currentTurn);
 
 
     }
@@ -96,5 +94,13 @@ public class GameEngine implements GEInterface{
     @Override
     public PlayerTeam getTurn() {
         return currentTurn;
+    }
+
+    public void setRolledNumber(int rolled){
+         RolledNumber = rolled;
+    }
+
+    public int getRolledNumber() {
+        return RolledNumber;
     }
 }
